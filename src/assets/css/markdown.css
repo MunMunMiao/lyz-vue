@@ -1,0 +1,53 @@
+@media screen and (min-width: 640px){
+
+    .markdown{overflow-x: auto;overflow-y: hidden;}
+    .markdown h1{font-size: 34px;margin-bottom: 30px;position: relative}
+    .markdown h1:after{content: '';position: absolute;width: 100%;height: 1px;bottom: -10px;left: 0;background-color: #e1e1e1;}
+    .markdown h2{font-size: 30px;margin-bottom: 30px;}
+    .markdown h3{font-size: 26px;margin-bottom: 30px;}
+    .markdown h4{font-size: 22px;margin-bottom: 30px;}
+    .markdown h5{font-size: 18px;margin-bottom: 30px;}
+    .markdown h6{font-size: 14px;margin-bottom: 30px;}
+    .markdown pre{background-color: #e1e1e1;border-radius: 5px;display: flex;line-height: 60px;white-space: pre;overflow-x: auto;margin-bottom: 20px;}
+    .markdown pre code{width: 100%;padding: 10px 20px;line-height: 2;}
+    .markdown blockquote{position: relative;padding-left: 30px;line-height: 1;}
+    .markdown blockquote:before{content:'';position: absolute;width: 3px;height: 100%;left: 0;top: 0;background-color: #156a9c;}
+    .markdown blockquote p{display: inherit;margin: 0;}
+    .markdown em{font-style: oblique;}
+    .markdown strong{font-weight: bold;}
+    .markdown a{position: relative;}
+    .markdown a:hover:after{width: 100%;}
+    .markdown ul{list-style-type: unset;}
+    .markdown ol{list-style-type: decimal;}
+    .markdown img, .markdown video, .markdown iframe{max-width: 100%;max-height: 60vh;}
+    .markdown p{display: inline-block;margin-bottom: 20px;}
+    .markdown iframe{display: block;}
+
+}
+
+@media screen and (max-width: 640px){
+
+    .markdown{overflow-x: auto;overflow-y: hidden;}
+    .markdown h1{font-size: 34px;margin-bottom: 30px;position: relative}
+    .markdown h1:after{content: '';position: absolute;width: 100%;height: 1px;bottom: -10px;left: 0;background-color: #e1e1e1;}
+    .markdown h2{font-size: 30px;margin-bottom: 30px;}
+    .markdown h3{font-size: 26px;margin-bottom: 30px;}
+    .markdown h4{font-size: 22px;margin-bottom: 30px;}
+    .markdown h5{font-size: 18px;margin-bottom: 30px;}
+    .markdown h6{font-size: 14px;margin-bottom: 30px;}
+    .markdown pre{background-color: #e1e1e1;border-radius: 5px;display: flex;line-height: 60px;white-space: pre;overflow-x: auto;margin-bottom: 20px;}
+    .markdown pre code{width: 100%;padding: 10px 20px;line-height: 2;}
+    .markdown blockquote{position: relative;padding-left: 30px;line-height: 1;}
+    .markdown blockquote:before{content:'';position: absolute;width: 3px;height: 100%;left: 0;top: 0;background-color: #156a9c;}
+    .markdown blockquote p{display: inherit;margin: 0;}
+    .markdown em{font-style: oblique;}
+    .markdown strong{font-weight: bold;}
+    .markdown a{position: relative;}
+    .markdown a:hover:after{width: 100%;}
+    .markdown ul{list-style-type: unset;}
+    .markdown ol{list-style-type: decimal;}
+    .markdown img, .markdown video, .markdown iframe{max-width: 100%;max-height: 60vh;}
+    .markdown p{display: inline-block;margin-bottom: 20px;}
+    .markdown iframe{display: block;}
+
+}
