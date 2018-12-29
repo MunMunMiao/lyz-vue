@@ -1,15 +1,44 @@
+import axios from 'axios'
+
 export default {
     state: {
-        light: true
+        dark: false,
+        lang: {
+            key: 'english',
+            value: '美国'
+        },
+        langs: [
+            {
+                key: 'english',
+                value: '美国'
+            },
+            {
+                key: 'chinaese',
+                value: '中国'
+            },
+        ]
     },
     getters: {
-        isLight: function (state) {
-            return state.light;
+        isLight(state){
+            return !state.dark
         },
-        isDark: function (state) {
-            return !state.light;
+        isDark(state){
+            return state.dark
+        },
+        langList(state){
+            return state.langs
+        },
+        lang(state){
+            return state.lang
+        }
+    },
+    mutations: {
+        setDisplayMode(state, value){
+            state.dark = value
+        },
+        setLang(state, value){
+            state.lang = value
         },
     },
-    mutations: {},
     actions: {}
-};
+}

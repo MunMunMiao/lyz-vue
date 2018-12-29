@@ -2,13 +2,37 @@
 
     <div class="login">
 
-        <input v-model="name" :class="{disabled:isLoading}" :disabled=isLoading type="text" :placeholder=" language['username'] " />
-        <input v-model="pw" :class="{disabled:isLoading}" :disabled=isLoading type="password" :placeholder=" language['password'] " />
-        <button class="btn" :class="{disabled:isLoading}" :disabled=isLoading type="button" v-text=" isLoading ? '...' : language['login'] " v-on:click="login"></button>
-        <div class="option">
-            <router-link to="/passport/signup">还没有账号?</router-link>
-            <router-link to="">忘记密码?</router-link>
-        </div>
+        <v-card width="100%" height="100%">
+
+            <v-img height="200" contain :src="logo"></v-img>
+
+            <v-card-text class="content">
+
+                <div class="text">
+                    <v-text-field label="Name" v-model="name"></v-text-field>
+                </div>
+                <div class="text">
+                    <v-text-field label="Password" type="password" v-model="password"></v-text-field>
+                </div>
+
+
+            </v-card-text>
+
+            <v-card-actions class="actions">
+
+                <v-btn block color="primary" @click="login" :loading="loading">Login</v-btn>
+
+            </v-card-actions>
+
+            <v-card-actions class="actions">
+
+                <v-btn depressed flat color="secondary" to="/passport/signup">New Account</v-btn>
+
+                <v-btn depressed flat color="secondary">Forget?</v-btn>
+
+            </v-card-actions>
+
+        </v-card>
 
     </div>
 
@@ -16,99 +40,77 @@
 <style lang="less" scoped>
 
     .login{
-        width: 70%;height: 50%;margin: 0 auto;display: flex;flex-wrap: wrap;justify-content: center;
 
+        .content{
+            width: 100%;
+            padding: 0 10%;
 
-        .disabled{cursor: not-allowed!important;opacity: .8;}
-        input{width: 100%;height: 40px;line-height: 40px;border-bottom: 1px solid #e1e1e1;transition: all .2s ease;}
-        .btn{width: 100%;height: 40px;line-height: 40px;color: #fff;border-radius: 5px;cursor: pointer;position: relative;transition: all .2s ease;}
-        .option{
-            width: 100%;height: 40px;line-height: 40px;display: flex;justify-content: space-between;transition: all .2s ease;
+            .text{
+                width: 100%;
+            }
         }
-
+        .actions{
+            width: 100%;
+            padding: 5% 10%;
+            justify-content: space-between;
+        }
     }
 
 </style>
 <script>
+
+    import logo from '../../assets/images/logo.svg'
 
     export default ({
         name: 'login',
         props: [],
         data() {
             return {
-                name:'',
-                pw:'',
-                isLoading: false
+                name: '',
+                password: '',
+                loading: false
             }
         },
         components: {},
         computed: {
-            language: function () {
-                return this.$store.state.language.data
+            logo(){
+                return logo
             }
         },
-        watch: {
-            language () {
-                document.title = '::' + this.language['login'] + '::'
-            }
-        },
-        beforeCreate() {
-
-        },
-        create() {
-
-        },
-        beforeMount() {
-
-        },
-        mounted() {
-
-            document.title = '::' + this.language['login'] + '::'
-
-        },
-        destroyed() {
-
-        },
+        watch: {},
+        beforeCreate() {},
+        create() {},
+        beforeMount() {},
+        mounted() {},
+        destroyed() {},
         methods: {
-            login (){
+            login(){
 
-                let name = this.name.length > 0 ? this.name : false
-                let pw = this.pw.length > 0 ? this.pw : false
-
-                if ( name === false || pw === false ){
-                    store.commit('openTips', '账号或者密码为空')
-                    return
-                }
-
-                const form = new FormData()
-                form.append('name', name)
-                form.append('password', pw)
-
-
-                this.isLoading = true
+                this.loading = true
 
                 this.$axios
-                    .post('/api/user/login', {
-                        name: name,
-                        password: pw
+                    .post('/user/login', {
+                        name: this.name,
+                        password: this.password
                     })
                     .then(r => {
 
-                        this.$store.commit('openTips', r.data.message)
+                        if ( r.data.success ){
 
-                        if ( r.data.status === 1 ){
-                            this.$store.dispatch('loadUserData')
                             this.$router.push('/')
+
                         }
 
-                        this.isLoading = false
+                        this.loading = false
+
+                    })
+                    .catch(r => {
+
+                        this.loading = false
 
                     })
 
-
             }
-
         }
-
     })
 </script>

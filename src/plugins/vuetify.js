@@ -1,19 +1,19 @@
-import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
-import 'vuetify/src/stylus/app.styl';
-import 'material-design-icons-iconfont/dist/material-design-icons.css';
-import '@mdi/font/css/materialdesignicons.css';
+import Vue from 'vue'
+import Vuetify from 'vuetify/lib'
+
+import 'vuetify/src/stylus/app.styl'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import '@mdi/font/css/materialdesignicons.css'
+
 Vue.use(Vuetify, {
     theme: {
-        primary: '#3599ff',
-        secondary: '#689bd6',
-        accent: '#E53935',
-        error: '#FF5252',
-        info: '#2196F3',
-        success: '#4CAF50',
-        warning: '#FFC107',
-        font: '#555555'
+        primary: '#0D47A1',
+        secondary: '#4082e8',
+        accent: '#a10d0d',
+        error: '#c01818',
+        success: '#388E3C',
+        warning: '#FBC02D',
+        font: '#212121'
     },
     iconfont: 'mdi',
-});
-//# sourceMappingURL=vuetify.js.map
+})

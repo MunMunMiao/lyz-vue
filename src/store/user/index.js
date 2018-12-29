@@ -1,42 +1,24 @@
 export default {
     state: {
-        user: null
+        data: null
+    },
+    getters: {
+        isLogin(state){
+            return state.data === null ? false : true
+        },
+        getUserData(state){
+
+            return state.data
+
+        }
     },
     mutations: {
-        loadUserData: function (state, data) {
-            state.user = data;
+        setUserData(state, data){
+            state.data = data
         },
-        userExit: function (state) {
-            state.user = null;
-        }
+        userSignOut(state){
+            state.date = null
+        },
     },
-    actions: {
-        loadUserData: function (context, message) {
-            // axios
-            //     .post('/api/user/getUserData')
-            //     .then(r => {
-            //
-            //         if( r.data.status == 1 ){
-            //             context.commit('loadUserData', r.data.content)
-            //         }
-            //         if ( r.data.status == 0 ){
-            //             // this.commit('openTips', r.data.message)
-            //         }
-            //
-            //     })
-        },
-        userExit: function (context) {
-            // axios
-            //     .post('/api/user/exit')
-            //     .then(r => {
-            //         if ( r.data.status === 1 ){
-            //             context.commit('exit')
-            //             // context.commit('openTips', r.data.message)
-            //         }
-            //         if ( r.data.status === 0 ){
-            //             // context.commit('openTips', r.data.message)
-            //         }
-            //     })
-        }
-    }
-};
+    actions: {}
+}

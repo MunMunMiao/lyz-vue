@@ -1,5 +1,5 @@
 module.exports = {
-    baseUrl: './',
+    baseUrl: undefined,
     outputDir: undefined,
     assetsDir: undefined,
     runtimeCompiler: undefined,
@@ -7,6 +7,6 @@ module.exports = {
     parallel: undefined,
 
     css: {
-        sourceMap: true
+        extract: false
     }
 }

@@ -8,7 +8,7 @@
             <div class="header">
                 <div class="title">添加</div>
                 <router-link tag="button" class="close" to="/gallery">
-                    <font-awesome-icon class="icon" :icon="iconTimes" size="lg" style="color: inherit;" />
+                    <!--<font-awesome-icon class="icon" :icon="iconTimes" size="lg" style="color: inherit;" />-->
                 </router-link>
             </div>
 
@@ -108,8 +108,8 @@
 </style>
 <script>
 
-    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-    import iconTimes from '@fortawesome/fontawesome-free-solid/faTimes'
+    // import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+    // import iconTimes from '@fortawesome/fontawesome-free-solid/faTimes'
 
     export default ({
         name: 'create',
@@ -121,10 +121,10 @@
             }
         },
         components: {
-            FontAwesomeIcon
+            // FontAwesomeIcon
         },
         computed: {
-            iconTimes: () => { return iconTimes }
+            // iconTimes: () => { return iconTimes }
         },
         watch: {},
         beforeCreate() {

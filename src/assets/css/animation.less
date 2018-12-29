@@ -1,0 +1,22 @@
+/*Vue-Animation*/
+.opacity-enter-active, .opacity-leave-active {
+    transition: opacity .2s ease;
+}
+.opacity-enter, .opacity-leave-to{
+    opacity: 0;
+}
+
+.bottomToTop-enter-active, .bottomToTop-leave-active {
+    transition: all .4s ease;
+    z-index: 0;
+}
+.bottomToTop-enter, .bottomToTop-leave-to{
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+@keyframes rotate {
+    0%{ transform: rotate(0deg); }
+    50%{ transform: rotate(180deg); }
+    100%{ transform: rotate(360deg); }
+}

@@ -23,10 +23,10 @@
         <div class="function">
 
             <button v-on:click="submit">
-                <font-awesome-icon class="icon" :icon="iconCheck" style="color: inherit;" />
+                <!--<font-awesome-icon class="icon" :icon="iconCheck" style="color: inherit;" />-->
             </button>
             <button v-on:click="del">
-                <font-awesome-icon class="icon" :icon="iconTrashAlt" style="color: inherit;" />
+                <!--<font-awesome-icon class="icon" :icon="iconTrashAlt" style="color: inherit;" />-->
             </button>
 
         </div>
@@ -78,9 +78,9 @@
 
     import store from '../../store'
     import router from '../../router'
-    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-    import iconCheck from '@fortawesome/fontawesome-free-solid/faCheck'
-    import iconTrashAlt from '@fortawesome/fontawesome-free-solid/faTrashAlt'
+    // import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+    // import iconCheck from '@fortawesome/fontawesome-free-solid/faCheck'
+    // import iconTrashAlt from '@fortawesome/fontawesome-free-solid/faTrashAlt'
 
     export default ({
 
@@ -92,7 +92,7 @@
             }
         },
         components: {
-            FontAwesomeIcon
+            // FontAwesomeIcon
         },
         computed:{
             language() {
@@ -104,8 +104,8 @@
             isEdit () {
                 return this.noteID != undefined
             },
-            iconCheck: () => { return iconCheck },
-            iconTrashAlt: () => { return iconTrashAlt },
+            // iconCheck: () => { return iconCheck },
+            // iconTrashAlt: () => { return iconTrashAlt },
         },
         watch:{
             language () {

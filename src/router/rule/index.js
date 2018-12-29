@@ -1,16 +1,25 @@
-var rule = [
+import gallery from './gallery/index'
+import passport from './passport/index'
+
+const rule = [
     {
         path: '/',
-        name: 'index',
-        component: () => import('../../views/index/index')
+        meta: {
+            auth: true
+        },
+        component: () => import('../../views/index/index.vue'),
+        children: [
+            gallery,
+        ]
     },
+    passport,
     // note,
-    // gallery,
     // setting,
     // passport,
-    {
-        path: '*',
-        redirect: '/'
-    }
-];
-export default rule;
+    // {
+    //     path: '*',
+    //     redirect: '/'
+    // }
+]
+
+export default rule

@@ -1,58 +1,62 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import rule from './rule/index';
-Vue.use(Router);
-var router = new Router({
+import Vue from 'vue'
+import Router from 'vue-router'
+import rule from './rule/index'
+import store from '../store/index'
+import axios from 'axios'
+
+Vue.use(Router)
+
+const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: rule
-});
-// router.beforeEach((to, from, next) => {
-//
-//     if ( store.state.system.user === null ){
-//
-//         axios.post('/api/user/getUserData')
-//             .then(r => {
-//
-//                 if( r.data.status == 1 ){
-//                     store.commit('loadUserData', r.data.content)
-//                 }
-//                 if ( r.data.status == 0 ){
-//                     store.commit('openTips', r.data.message)
-//                 }
-//
-//                 // 未登录状态
-//                 if ( store.state.system.user === null ){
-//                     if ( to.fullPath === '/passport/login' || to.fullPath === '/passport/signup' ){
-//                         next()
-//                     }else {
-//                         next('/passport/login')
-//                     }
-//                 }
-//                 // 登录状态
-//                 if ( store.state.system.user !== null ){
-//                     if ( to.fullPath === '/passport/login' || to.fullPath === '/passport/signup' ){
-//                         next('/')
-//                     }else {
-//                         next()
-//                     }
-//                 }
-//
-//
-//             })
-//
-//     }else {
-//         next()
-//     }
-//
-// })
-// router.beforeResolve((to, from, next) => {
-//
-//     next()
-//
-// })
-// router.afterEach((to, from) => {
-//
-//
-// })
-export default router;
+})
+router.beforeEach((to, from, next) => {
+
+    if ( store.getters.isLogin === false ){
+
+        if ( to.meta.auth === true ){
+
+            axios
+                .get('/user/userData')
+                .then(r => {
+
+                    if ( r.data.success ){
+
+                        store.commit('setUserData', r.data.content)
+
+                        store.getters.isLogin === true ? next() : next('/passport/login')
+
+                    }
+                    if ( !r.data.success ){
+
+                        next('/passport/login')
+
+                    }
+
+                })
+
+        }
+        if ( to.meta.auth === false ){
+
+            next()
+
+        }
+
+    }else {
+
+        next()
+
+    }
+
+})
+router.beforeResolve((to, from, next) => {
+
+    next()
+
+})
+router.afterEach((to, from) => {
+
+
+})
+export default router

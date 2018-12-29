@@ -10,7 +10,7 @@
             <div class="fn">
 
                 <router-link tag="button" to="/gallery">
-                    <font-awesome-icon class="icon" :icon="iconTimes" size="lg" style="color: inherit;" />
+                    <!--<font-awesome-icon class="icon" :icon="iconTimes" size="lg" style="color: inherit;" />-->
                 </router-link>
 
             </div>
@@ -57,8 +57,8 @@
 </style>
 <script>
 
-    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-    import iconTimes from '@fortawesome/fontawesome-free-solid/faTimes'
+    // import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+    // import iconTimes from '@fortawesome/fontawesome-free-solid/faTimes'
 
     export default ({
         name: 'view',
@@ -75,10 +75,10 @@
             }
         },
         components: {
-            FontAwesomeIcon
+            // FontAwesomeIcon
         },
         computed: {
-            iconTimes: () => { return iconTimes },
+            // iconTimes: () => { return iconTimes },
             key() { return this.$route.params.key }
         },
         watch: {

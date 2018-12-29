@@ -1,9 +1,10 @@
 import axios from 'axios'
 
+axios.defaults.baseURL = '/api'
 axios.defaults.withCredentials = true
 
 export default {
-    install: function (Vue: void, options: void) {
+    install: function (Vue, options) {
         Vue.prototype.$axios = axios
     }
-};
+}

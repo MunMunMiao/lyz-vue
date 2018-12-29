@@ -1,19 +1,24 @@
-var passport = [
-    {
-        path: '/passport',
-        name: 'passport',
-        redirect: '/passport/login',
-        // component: () => import('../../views/passport/index'),
-        children: [
-            {
-                path: 'login',
-                name: 'login',
-            },
-            {
-                path: 'signup',
-                name: 'signup',
-            }
-        ]
+export default {
+    path: '/passport',
+    meta: {
+        auth: false
     },
-];
-export default passport;
+    redirect: '/passport/login',
+    component: () => import('../../../views/passport/index.vue'),
+    children: [
+        {
+            path: 'login',
+            meta: {
+                auth: false
+            },
+            component: () => import('../../../views/passport/login.vue'),
+        },
+        {
+            path: 'signup',
+            meta: {
+                auth: false
+            },
+            component: () => import('../../../views/passport/signup.vue'),
+        },
+    ]
+}

@@ -10,25 +10,25 @@
             <!--普通用户-->
             <router-link to="/setting/portrait" tag="li" active-class="active">
                 <a class="box">
-                    <font-awesome-icon class="icon" :icon="iconUser" style="color: inherit;" />
+                    <!--<font-awesome-icon class="icon" :icon="iconUser" style="color: inherit;" />-->
                     <span class="text" v-if="openText" v-text="language['portrait']"></span>
                 </a>
             </router-link>
             <router-link to="/setting/data" tag="li" active-class="active">
                 <a class="box">
-                    <font-awesome-icon class="icon" :icon="iconFileAlt" style="color: inherit;" />
+                    <!--<font-awesome-icon class="icon" :icon="iconFileAlt" style="color: inherit;" />-->
                     <span class="text" v-if="openText" v-text="language['data']"></span>
                 </a>
             </router-link>
             <router-link to="/setting/safety" tag="li" active-class="active">
                 <a class="box">
-                    <font-awesome-icon class="icon" :icon="iconShieldAlt" style="color: inherit;" />
+                    <!--<font-awesome-icon class="icon" :icon="iconShieldAlt" style="color: inherit;" />-->
                     <span class="text" v-if="openText" v-text="language['safety']"></span>
                 </a>
             </router-link>
             <router-link to="/setting/notice" tag="li" active-class="active">
                 <a class="box">
-                    <font-awesome-icon class="icon" :icon="iconComment" style="color: inherit;" />
+                    <!--<font-awesome-icon class="icon" :icon="iconComment" style="color: inherit;" />-->
                     <span class="text" v-if="openText" v-text="language['notice']"></span>
                 </a>
             </router-link>
@@ -39,7 +39,7 @@
             <!--管理员用户-->
             <router-link to="#" tag="li" v-if="userData.admin == 1" active-class="active">
                 <a class="box">
-                    <font-awesome-icon class="icon" :icon="iconFileAlt" style="color: inherit;" />
+                    <!--<font-awesome-icon class="icon" :icon="iconFileAlt" style="color: inherit;" />-->
                     <span class="text" v-if="openText" >测试</span>
                 </a>
             </router-link>
@@ -50,7 +50,7 @@
             <!--ROOT用户-->
             <router-link to="/setting/language" tag="li" v-if="userData.root == 1" active-class="active">
                 <a class="box">
-                    <font-awesome-icon class="icon" :icon="iconGlobe" style="color: inherit;" />
+                    <!--<font-awesome-icon class="icon" :icon="iconGlobe" style="color: inherit;" />-->
                     <span class="text" v-if="openText" v-text="language['language']"></span>
                 </a>
             </router-link>
@@ -111,12 +111,12 @@
 <script>
 
     import store from '../../store'
-    import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-    import iconUser from '@fortawesome/fontawesome-free-solid/faUser'
-    import iconFileAlt from '@fortawesome/fontawesome-free-solid/faFileAlt'
-    import iconShieldAlt from '@fortawesome/fontawesome-free-solid/faShieldAlt'
-    import iconComment from '@fortawesome/fontawesome-free-solid/faComment'
-    import iconGlobe from '@fortawesome/fontawesome-free-solid/faGlobe'
+    // import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+    // import iconUser from '@fortawesome/fontawesome-free-solid/faUser'
+    // import iconFileAlt from '@fortawesome/fontawesome-free-solid/faFileAlt'
+    // import iconShieldAlt from '@fortawesome/fontawesome-free-solid/faShieldAlt'
+    // import iconComment from '@fortawesome/fontawesome-free-solid/faComment'
+    // import iconGlobe from '@fortawesome/fontawesome-free-solid/faGlobe'
 
     export default {
         name:'setting',
@@ -126,7 +126,7 @@
             }
         },
         components: {
-            FontAwesomeIcon
+            // FontAwesomeIcon
         },
         computed:{
             language(){
@@ -138,11 +138,11 @@
             isLogin(){
                 return this.userData !== null
             },
-            iconUser: () => { return iconUser },
-            iconFileAlt: () => { return iconFileAlt },
-            iconShieldAlt: () => { return iconShieldAlt },
-            iconComment: () => { return iconComment },
-            iconGlobe: () => { return iconGlobe }
+            // iconUser: () => { return iconUser },
+            // iconFileAlt: () => { return iconFileAlt },
+            // iconShieldAlt: () => { return iconShieldAlt },
+            // iconComment: () => { return iconComment },
+            // iconGlobe: () => { return iconGlobe }
         },
         mounted (){
 

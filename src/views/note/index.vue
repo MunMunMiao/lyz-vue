@@ -32,10 +32,10 @@
         <div class="fn">
 
             <router-link to="/note/edit/create" tag="button" class="add">
-                <font-awesome-icon :icon="iconPlus" style="color: inherit;" />
+                <!--<font-awesome-icon :icon="iconPlus" style="color: inherit;" />-->
             </router-link>
             <button class="backTop" v-on:click="backTop">
-                <font-awesome-icon :icon="iconChevronUp" style="color: inherit;" />
+                <!--<font-awesome-icon :icon="iconChevronUp" style="color: inherit;" />-->
             </button>
 
         </div>
@@ -95,8 +95,8 @@
 </style>
 <script>
 
-    import iconChevronUp from '@fortawesome/fontawesome-free-solid/faChevronUp'
-    import iconPlus from '@fortawesome/fontawesome-free-solid/faPlus'
+    // import iconChevronUp from '@fortawesome/fontawesome-free-solid/faChevronUp'
+    // import iconPlus from '@fortawesome/fontawesome-free-solid/faPlus'
 
     export default ({
 
@@ -115,8 +115,8 @@
             language(){
                 return this.$store.state.language.data
             },
-            iconChevronUp: () => { return iconChevronUp },
-            iconPlus: () => { return iconPlus },
+            // iconChevronUp: () => { return iconChevronUp },
+            // iconPlus: () => { return iconPlus },
             allNoteHeight(){
                 // this.note.length *
             }
